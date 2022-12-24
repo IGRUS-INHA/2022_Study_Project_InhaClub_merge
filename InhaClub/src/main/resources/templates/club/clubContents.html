@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Club detail</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submit').click(function() {
+                if ($('#qnaPw').val() == "" || $('#qnaPw').val() == null) {
+                    alert("비밀번호를 입력해주세요.");
+                }
+                else {
+                    $.ajax({
+                        type: "POST",
+                        url : "/api/club/saveComment",
+                        contentType: 'application/json',
+                        data : JSON.stringify ({
+                            "postsId" : [[${id}]],
+                            "content" : $('#qna').val(),
+                            "username" : $('#username').val(),
+                            "password" : $('#qnaPw').val()
+                        }),
+                        success : function() {
+                            alert("QnA가 등록되었습니다.");
+                            window.location.reload();                    
+                        },
+                        error : function() {
+                            alert("Error!");
+                        }
+                    });
+                }
+            });
+        });
+        
+
+        function commentDelete(_id) {
+            $.ajax({
+                type : "DELETE",
+                url : "/api/club/deleteComment",
+                contentType: 'application/json',
+                data : JSON.stringify ({
+                    "id" : _id,
+                    "password" : $('#password' + _id).val()
+                }),
+                success : function() {
+                    alert("삭제되었습니다.");
+                    window.location.reload();                    
+                },
+                error : function() {
+                    alert("Error!");
+                }
+            });
+        };
+
+        function commentModify(_id) {
+            $.ajax({
+                type : "POST",
+                url : "/api/club/modifyComment" ,
+                contentType: 'application/json',
+                data : JSON.stringify ({
+                    "id" : _id,
+                    "content" : $('#modicomment' + _id).val(),
+                    "password" : $('#password' + _id).val()
+                }),
+                success : function() {
+                    alert("수정되었습니다.");
+                    window.location.reload();                    
+                },
+                error : function() {
+                    alert("Error!");
+                }
+            });
+        };
+
+        function reComment(_id) {
+            if ($('#recommentPassword' + _id).val() == "" || $('#recommentPassword' + _id).val() == null) { alert("비밀번호를 입력해주세요."); }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url : "/api/club/saveComment",
+                    contentType: 'application/json',
+                    data : JSON.stringify ({
+                        "postsId" : [[${id}]],
+                        "content" : $('#recomment' + _id).val(),
+                        "username" : $('#recommentUsername' + _id).val(),
+                        "password" : $('#recommentPassword' + _id).val(),
+                        "parentId" : _id
+                    }),
+                    success : function() {
+                        alert("답글이 등록되었습니다.");
+                        window.location.reload();                    
+                    },
+                    error : function() {
+                        alert("Error!");
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+            <tr>
+                <td th:text="${club.clubName}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td th:text="${club.description}"></td>
+            </tr>
+            <tr th:each="comments : ${comments}">
+                <td th:text="${comments.username}"></td>
+                <td th:text="${comments.content}"></td>
+                <td th:text="${comments.modifiedDate}"></td>
+                <td>
+                    <input type="text" th:id="'modicomment' + ${comments.id}" name="modcomment" placeholder="수정">
+                    <input type="text" th:id="'password' + ${comments.id}" name="password" placeholder="비밀번호">
+                    <button type="button" th:commentId="${comments.id}" th:onclick="commentModify(this.getAttribute('commentId'))">수정</button>
+                    <button type="button" th:commentId="${comments.id}" th:onclick="commentDelete(this.getAttribute('commentId'))">삭제</button>
+                    <input type="text" th:id="'recommentUsername' + ${comments.id}" name="recommentUsername" placeholder="작성자">
+                    <input type="text" th:id="'recomment' + ${comments.id}" name="recomment" placeholder="답글">
+                    <input type="text" th:id="'recommentPassword' + ${comments.id}" name="recommentPassword" placeholder="비밀번호">
+                    <button type="text" th:parentId="${comments.id}" th:onclick="reComment(this.getAttribute('parentId'))">답글 등록</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="text" id="username" name="username" placeholder="작성자">
+    <input type="text" id="qna" name="qna" placeholder="asdf">
+    <input type="text" id="qnaPw" name="qnaPw" placeholder="비밀번호">
+    <button type="button" id="submit">등록</button>
+</body>
+</html>
