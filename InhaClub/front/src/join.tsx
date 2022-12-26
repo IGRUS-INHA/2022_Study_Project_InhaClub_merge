@@ -36,7 +36,8 @@ function Join()
 
     function EmailConfifm()
     {
-        return axios.post("/api/auth/mailConfirm", {userEmail}).then(function(response)
+        return axios.post("/api/auth/mailConfirm",
+        {userEmail}).then(function(response)
         {
             if(response.data) alert("인증 이메일을 전송했습니다.");
             else alert("중복된 이메일입니다.");
@@ -45,7 +46,8 @@ function Join()
 
     function EmailConfifmChk() : void
     {
-        axios.post("/api/auth/mailConfirmChk", {code}).then(function(response)
+        axios.post("/api/auth/mailConfirmChk",
+        {code}).then(function(response)
         {
             mailchk = response.data;
             if (mailchk) alert("인증되었습니다.");
