@@ -39,7 +39,6 @@ public class AuthApiController {
             throw new Exception("회원 저장에 실패했습니다.");
         } else {
             log.info("User(" + user.getUserId() +") has be registered."); // 로그를 찍을 자리
-            response.sendRedirect("/main.html");
             return ResponseEntity.status(HttpStatus.OK).body(responseUser);
         }
     }
@@ -58,17 +57,15 @@ public class AuthApiController {
 
     /** 인증 이메일 보내기 */
     @PostMapping(value = "/auth/mailConfirm")
-    public ResponseEntity emailConfirm(@RequestBody EmailRequestDto emailRequestDto, HttpServletResponse response) throws Exception {
+    public Boolean emailConfirm(@RequestBody EmailRequestDto emailRequestDto, HttpServletResponse response) throws Exception {
         if (authService.chkDuplicatedEmail(emailRequestDto.getUserEmail())) {
-            return null;
+            return false;
         }
         else {
-            HttpHeaders headers = new HttpHeaders();
             String code = emailAuthService.sendSimpleMessage(emailRequestDto.getUserEmail());
             setEmailAuthCode(code);
             log.info("email chk : " + emailRequestDto.getUserEmail());
-            headers.setLocation(URI.create("/"));
-            return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
+            return true;
         }
     }
 
