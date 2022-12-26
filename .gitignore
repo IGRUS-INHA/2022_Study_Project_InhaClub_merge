@@ -40,7 +40,6 @@ email.properties
 /src/main/resources/asdf.txt
 
 # dependencies
-/node_modules
 /.pnp
 .pnp.js
 
