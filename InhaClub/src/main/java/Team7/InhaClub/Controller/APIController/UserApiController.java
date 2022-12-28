@@ -1,12 +1,16 @@
 package Team7.InhaClub.Controller.APIController;
 
 import Team7.InhaClub.Domain.Dto.UserDto;
+import Team7.InhaClub.Domain.Entity.User;
 import Team7.InhaClub.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -29,5 +33,12 @@ public class UserApiController {
     public ResponseEntity<UserDto> userUpdate(@RequestBody UserDto userDto) {
         userService.userUpdate(userDto);
         return ResponseEntity.status(HttpStatus.OK).body(userDto);
+    }
+
+    /** 회원 리스트 전송 */
+    @PostMapping(value = "/user")
+    public List<User> list(Model model) {
+
+        return userService.findUsers();
     }
 }
