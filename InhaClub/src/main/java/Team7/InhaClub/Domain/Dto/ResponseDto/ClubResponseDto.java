@@ -4,6 +4,8 @@ import Team7.InhaClub.Domain.Entity.Club;
 import Team7.InhaClub.Domain.Entity.Posts;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 public class ClubResponseDto {
 

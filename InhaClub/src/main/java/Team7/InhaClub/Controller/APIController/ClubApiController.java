@@ -2,10 +2,7 @@ package Team7.InhaClub.Controller.APIController;
 
 import Team7.InhaClub.Domain.Dto.RequestDto.ClubRequestDto;
 import Team7.InhaClub.Domain.Dto.RequestDto.CommentsRequestDto;
-import Team7.InhaClub.Domain.Dto.ResponseDto.ClubResponseDto;
-import Team7.InhaClub.Domain.Dto.ResponseDto.CommentsResponseDto;
-import Team7.InhaClub.Domain.Dto.ResponseDto.InfoResponseDto;
-import Team7.InhaClub.Domain.Dto.ResponseDto.PostResponseDto;
+import Team7.InhaClub.Domain.Dto.ResponseDto.*;
 import Team7.InhaClub.Domain.Entity.Club;
 import Team7.InhaClub.Domain.Entity.Comments;
 import Team7.InhaClub.Service.ClubService;
@@ -110,5 +107,11 @@ public class ClubApiController {
         List<CommentsResponseDto> comments = dto.getComments();
 
         return new InfoResponseDto(response, dto, comments);
+    }
+
+    /** 클럽 리스트 전송 */
+    @PostMapping(value = "/clubList")
+    public ClubListResponseDto clubList() {
+        return new ClubListResponseDto(clubService.findClubs());
     }
 }
