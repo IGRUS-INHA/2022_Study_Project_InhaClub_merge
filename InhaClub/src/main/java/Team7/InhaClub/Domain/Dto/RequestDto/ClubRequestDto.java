@@ -49,6 +49,9 @@ public class ClubRequestDto {
     /** 동아리 설명 */
     private String description;
 
+    /** 동아리 검색 태그 */
+    private String tags;
+
     public Club toEntity() {
         return Club.builder()
                 .clubName(clubName)
@@ -62,6 +65,7 @@ public class ClubRequestDto {
                 .applicationConditions(applicationConditions)
                 .sns(sns)
                 .description(description)
+                .tags(tags)
                 .build();
     }
 }

@@ -112,6 +112,6 @@ public class ClubApiController {
     /** 클럽 리스트 전송 */
     @PostMapping(value = "/clubList")
     public ClubListResponseDto clubList() {
-        return new ClubListResponseDto(clubService.findClubs());
+        return new ClubListResponseDto(clubService.findClubs(), clubService.findClubTagLists());
     }
 }

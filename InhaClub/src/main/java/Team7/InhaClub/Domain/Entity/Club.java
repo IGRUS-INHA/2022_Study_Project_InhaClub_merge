@@ -66,8 +66,13 @@ public class Club {
     @JsonIgnore
     private Posts posts;
 
+    /** 동아리 설명 */
     @Column
     private String description;
+
+    /** 동아리 태그 */
+    @Column
+    private String tags;
 
     public void setPosts(Posts _posts) {
         this.posts = _posts;
@@ -90,5 +95,6 @@ public class Club {
         this.recruitEnd = _request.getRecruitEnd();
         this.applicationConditions = _request.getApplicationConditions();
         this.description = _request.getDescription();
+        this.tags = _request.getTags();
     }
 }
