@@ -2,7 +2,7 @@ package Team7.InhaClub.Controller.APIController;
 
 import Team7.InhaClub.Domain.Dto.RequestDto.ClubRequestDto;
 import Team7.InhaClub.Domain.Dto.RequestDto.CommentsRequestDto;
-import Team7.InhaClub.Domain.Dto.ResponseDto.ClubResponseDto;
+import Team7.InhaClub.Domain.Dto.ResponseDto.*;
 import Team7.InhaClub.Domain.Entity.Club;
 import Team7.InhaClub.Domain.Entity.Comments;
 import Team7.InhaClub.Service.ClubService;
@@ -12,10 +12,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.net.URI;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -94,5 +96,22 @@ public class ClubApiController {
     public ResponseEntity<CommentsRequestDto> delete(@RequestBody CommentsRequestDto _dto) throws Exception {
         commentsService.delete(_dto);
         return ResponseEntity.status(HttpStatus.OK).body(_dto);
+    }
+
+    /** 클럽 상세정보 전송 */
+    @PostMapping(value = "/club/{id}")
+    public InfoResponseDto clubPage(@PathVariable("id") @ModelAttribute("id") Long _id, Model model) {
+        Club club = clubService.findByClubId(_id).orElseThrow(() -> new IllegalArgumentException("not found."));
+        ClubResponseDto response = new ClubResponseDto(club);
+        PostResponseDto dto = new PostResponseDto(club.getPosts());
+        List<CommentsResponseDto> comments = dto.getComments();
+
+        return new InfoResponseDto(response, dto, comments);
+    }
+
+    /** 클럽 리스트 전송 */
+    @PostMapping(value = "/clubList")
+    public ClubListResponseDto clubList() {
+        return new ClubListResponseDto(clubService.findClubs(), clubService.findClubTagLists());
     }
 }

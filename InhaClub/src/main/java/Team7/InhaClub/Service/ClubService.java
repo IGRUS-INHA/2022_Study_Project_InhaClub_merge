@@ -60,6 +60,16 @@ public class ClubService {
     @Transactional
     public List<Club> findClubs() { return clubRepository.findAll(); }
 
+    /** 모든 동아리 리스트의 태그를 넘김 */
+    public List<String> findClubTagLists() {
+        List<String> output = null;
+        for (Club i : clubRepository.findAll()) {
+            assert false;
+            output.add(i.getTags());
+        }
+        return output;
+    }
+
     /** 고유 id 로 동아리를 찾음 */
     @Transactional
     public Optional<Club> findByClubId(Long _id) { return clubRepository.findById(_id);}

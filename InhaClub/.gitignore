@@ -40,7 +40,6 @@ email.properties
 /src/main/resources/asdf.txt
 
 # dependencies
-/node_modules
 /.pnp
 .pnp.js
 
@@ -60,3 +59,4 @@ email.properties
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/front/node_modules/

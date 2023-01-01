@@ -4,6 +4,8 @@ import Team7.InhaClub.Domain.Entity.Club;
 import Team7.InhaClub.Domain.Entity.Posts;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 public class ClubResponseDto {
 
@@ -46,6 +48,9 @@ public class ClubResponseDto {
     /** 동아리 자체 설명 */
     private final String description;
 
+    /** 동아리 검색 태그 */
+    private final String tags;
+
     public ClubResponseDto(Club club) {
         this.id = club.getId();
         this.clubName = club.getClubName();
@@ -60,6 +65,7 @@ public class ClubResponseDto {
         this.applicationConditions = club.getApplicationConditions();
         this.posts = club.getPosts();
         this.description = club.getDescription();
+        this.tags = club.getTags();
     }
 
 }
