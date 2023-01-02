@@ -1,11 +1,12 @@
 import { ReactComponentElement, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { addKeyword, setIsSearch, subKeyword } from '../store/store'
 
 
 const Header = ():any => {
 
-
+    const navigate = useNavigate()
     // const [keyword, setKeyword]: any = useState([])
     const dispatch = useDispatch()
     const keyword = useSelector((state:any) => state.keyword)
@@ -15,9 +16,9 @@ const Header = ():any => {
         <div>
             <div className="biryong"/>
             <div className="header-top">
-                <div className="inha-logo"></div>
+                <div className="inha-logo" onClick={()=> navigate('/')}></div>
                 <div className="flex-wide"></div>
-                <div className="nav">
+                <div className="nav" onClick={()=>{navigate('/login')}}>
                     로그인/회원가입
                 </div>
             </div>
