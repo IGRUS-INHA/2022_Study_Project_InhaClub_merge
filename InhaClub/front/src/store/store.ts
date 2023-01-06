@@ -25,13 +25,43 @@ let isSearch : any = createSlice({
     }
   }
 })
-
+let isLogin : any = createSlice({
+  name: "isLogin",
+  initialState:
+  {
+    login:false
+  },
+  reducers : {
+    setIsLogin(state, actions)
+    {
+      state.login=true;
+    }
+  }
+})
+let token : any = createSlice({
+  name: "token",
+  initialState: {
+    accessToken: "",
+    refreshToken: ""
+  },
+  reducers: {
+    setToken(state, actions)
+    {
+      state.accessToken=actions.payload.accessToken;
+      state.refreshToken=actions.payload.refreshToken;
+    }
+  }
+})
 export let {addKeyword, subKeyword} = keyword.actions;
 export let {setIsSearch} = isSearch.actions;
+export let {setIsLogin}  = isLogin.actions;
+export let {setToken} = token.actions;
 
 export default configureStore({
   reducer: {
     keyword: keyword.reducer,
     isSearch: isSearch.reducer,
+    isLogin: isLogin.reducer,
+    token: token.reducer
   },
 });

@@ -16,7 +16,7 @@ public class AuthController {
     private final EmailAuthService emailAuthService;
 
     /** 회원가입 페이지 이동 */
-    @PostMapping(value = "/user/auth")
+    @GetMapping(value = "/user/auth")
     public ModelAndView createAuthForm() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/user/authForm");

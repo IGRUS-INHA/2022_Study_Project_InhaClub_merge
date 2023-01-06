@@ -1,0 +1,153 @@
+2023-01-06 00:23:53.449  INFO 13620 --- [restartedMain] o.s.nativex.NativeListener               : AOT mode disabled
+2023-01-06 00:23:53.824  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : Starting InhaClubApplication using Java 18 on DESKTOP-3U9SA75 with PID 13620 (C:\Users\index\Documents\2022_Study_Project_InhaClub_merge\InhaClub\bin\main started by index in C:\Users\index\Documents\2022_Study_Project_InhaClub_merge)
+2023-01-06 00:23:53.827  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-06 00:23:54.019  INFO 13620 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-06 00:23:54.021  INFO 13620 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-06 00:24:00.588  INFO 13620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-06 00:24:02.172  INFO 13620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1447 ms. Found 5 JPA repository interfaces.
+2023-01-06 00:24:03.748  WARN 13620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[Team7.InhaClub]' package. Please check your configuration.
+2023-01-06 00:24:05.778  INFO 13620 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ce1653d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-06 00:24:05.952  INFO 13620 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-01-06 00:24:08.996  INFO 13620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-06 00:24:09.000  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.27] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2023-01-06 00:24:09.002  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.27] using APR version [1.7.0].
+2023-01-06 00:24:09.004  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-01-06 00:24:09.005  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-01-06 00:24:09.040  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2023-01-06 00:24:09.079  INFO 13620 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-06 00:24:09.083  INFO 13620 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-06 00:24:10.701  INFO 13620 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-06 00:24:10.731  INFO 13620 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-06 00:24:10.736  INFO 13620 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 16711 ms
+2023-01-06 00:24:10.920  INFO 13620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-06 00:24:12.134  INFO 13620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-06 00:24:12.172  INFO 13620 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/InhaClub?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul'
+2023-01-06 00:24:13.537  INFO 13620 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-06 00:24:13.834  INFO 13620 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2023-01-06 00:24:14.577  INFO 13620 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-06 00:24:15.231  INFO 13620 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-01-06 00:24:18.919  INFO 13620 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-06 00:24:18.948  INFO 13620 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-06 00:24:24.999  WARN 13620 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-06 00:24:25.232  INFO 13620 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-01-06 00:24:31.236  INFO 13620 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b29ad16, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26a0f43f, org.springframework.security.web.context.SecurityContextPersistenceFilter@c563872, org.springframework.security.web.header.HeaderWriterFilter@50a6e22a, org.springframework.security.web.authentication.logout.LogoutFilter@28004e94, Team7.InhaClub.Security.JwtAuthenticationFilter@7251dbaa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4eba591d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a3ef611, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e6a8906, org.springframework.security.web.session.SessionManagementFilter@6e13f5cc, org.springframework.security.web.access.ExceptionTranslationFilter@615e4972, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@122fcaaa]
+2023-01-06 00:24:33.998  INFO 13620 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-06 00:24:34.368  INFO 13620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-06 00:24:34.424  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : Started InhaClubApplication in 42.528 seconds (JVM running for 46.073)
+2023-01-06 01:37:29.372  INFO 13620 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-06 01:37:29.377  INFO 13620 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-06 01:37:29.381  INFO 13620 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-01-06 01:37:31.477  INFO 13620 --- [http-nio-8080-exec-2] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 02:47:29.105  INFO 13620 --- [http-nio-8080-exec-3] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 02:49:41.613  INFO 13620 --- [http-nio-8080-exec-4] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 02:49:52.350  INFO 13620 --- [http-nio-8080-exec-5] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 02:51:33.676  INFO 13620 --- [http-nio-8080-exec-6] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 02:53:25.824  INFO 13620 --- [http-nio-8080-exec-8] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 02:53:39.783  INFO 13620 --- [http-nio-8080-exec-9] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 02:54:16.869  INFO 13620 --- [http-nio-8080-exec-1] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 02:54:25.437  INFO 13620 --- [http-nio-8080-exec-10] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 02:54:55.040  INFO 13620 --- [http-nio-8080-exec-7] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 02:55:07.573  INFO 13620 --- [http-nio-8080-exec-2] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 02:57:14.763  INFO 13620 --- [http-nio-8080-exec-3] T.I.C.APIController.AuthApiController    : login - 
+2023-01-06 03:00:32.953  INFO 13620 --- [http-nio-8080-exec-4] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 03:00:45.511  INFO 13620 --- [http-nio-8080-exec-5] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 03:02:37.271  INFO 13620 --- [http-nio-8080-exec-6] T.I.C.APIController.AuthApiController    : login - aaaa
+2023-01-06 03:02:41.872  INFO 13620 --- [http-nio-8080-exec-8] T.I.C.APIController.AuthApiController    : login - aaa
+2023-01-06 13:55:13.781  WARN 13620 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h50m28s558ms478µs900ns).
+2023-01-06 14:00:07.357  INFO 13620 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-06 14:00:07.693  INFO 13620 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-06 14:00:07.702  INFO 13620 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-06 14:00:07.726  WARN 13620 --- [Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@18/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@18/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@18/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@18/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@18/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@18/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@18/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@18/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@18/java.lang.Thread.run(Thread.java:833)
+2023-01-06 14:00:07.811  INFO 13620 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-06 14:00:07.826  INFO 13620 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-06 14:00:07.889  INFO 13620 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-06 14:00:08.356  INFO 13620 --- [restartedMain] o.s.nativex.NativeListener               : AOT mode disabled
+2023-01-06 14:00:08.437  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : Starting InhaClubApplication using Java 18 on DESKTOP-3U9SA75 with PID 13620 (C:\Users\index\Documents\2022_Study_Project_InhaClub_merge\InhaClub\bin\main started by index in C:\Users\index\Documents\2022_Study_Project_InhaClub_merge)
+2023-01-06 14:00:08.440  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-06 14:00:11.148  INFO 13620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-06 14:00:11.492  INFO 13620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 332 ms. Found 5 JPA repository interfaces.
+2023-01-06 14:00:11.855  WARN 13620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[Team7.InhaClub]' package. Please check your configuration.
+2023-01-06 14:00:12.310  INFO 13620 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ce1653d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-06 14:00:12.319  INFO 13620 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-01-06 14:00:12.491  INFO 13620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-06 14:00:12.492  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.27] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2023-01-06 14:00:12.495  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.27] using APR version [1.7.0].
+2023-01-06 14:00:12.512  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-01-06 14:00:12.530  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-01-06 14:00:12.594  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2023-01-06 14:00:12.597  INFO 13620 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-06 14:00:12.599  INFO 13620 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-06 14:00:13.238  INFO 13620 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-06 14:00:13.256  INFO 13620 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-06 14:00:13.257  INFO 13620 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4788 ms
+2023-01-06 14:00:13.287  INFO 13620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-01-06 14:00:13.354  INFO 13620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-01-06 14:00:13.355  INFO 13620 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/InhaClub?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul'
+2023-01-06 14:00:13.531  INFO 13620 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-06 14:00:13.713  INFO 13620 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-01-06 14:00:14.359  INFO 13620 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-06 14:00:14.371  INFO 13620 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-06 14:00:15.425  WARN 13620 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-06 14:00:15.490  INFO 13620 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-01-06 14:00:22.140  INFO 13620 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72ac6fc9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57998f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@441ec66a, org.springframework.security.web.header.HeaderWriterFilter@37793234, org.springframework.security.web.authentication.logout.LogoutFilter@652c0a5a, Team7.InhaClub.Security.JwtAuthenticationFilter@7f1f6623, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41f8adbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3feedf26, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48af4895, org.springframework.security.web.session.SessionManagementFilter@1e9e47cb, org.springframework.security.web.access.ExceptionTranslationFilter@c612046, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@16742e63]
+2023-01-06 14:00:22.850  INFO 13620 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-06 14:00:22.937  INFO 13620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-06 14:00:22.951  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : Started InhaClubApplication in 14.842 seconds (JVM running for 48994.608)
+2023-01-06 14:00:22.990  INFO 13620 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-06 14:00:24.768  INFO 13620 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-06 14:00:24.872  INFO 13620 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-06 14:00:24.891  WARN 13620 --- [Thread-7] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@18/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@18/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@18/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@18/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@18/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@18/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@18/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@18/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@18/java.lang.Thread.run(Thread.java:833)
+2023-01-06 14:00:24.914  INFO 13620 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-06 14:00:24.928  INFO 13620 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-01-06 14:00:24.959  INFO 13620 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-01-06 14:00:25.331  INFO 13620 --- [restartedMain] o.s.nativex.NativeListener               : AOT mode disabled
+2023-01-06 14:00:25.393  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : Starting InhaClubApplication using Java 18 on DESKTOP-3U9SA75 with PID 13620 (C:\Users\index\Documents\2022_Study_Project_InhaClub_merge\InhaClub\bin\main started by index in C:\Users\index\Documents\2022_Study_Project_InhaClub_merge)
+2023-01-06 14:00:25.396  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-06 14:00:27.346  INFO 13620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-06 14:00:27.481  INFO 13620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2023-01-06 14:00:27.709  WARN 13620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[Team7.InhaClub]' package. Please check your configuration.
+2023-01-06 14:00:27.808  INFO 13620 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ce1653d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-06 14:00:27.821  INFO 13620 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-01-06 14:00:27.982  INFO 13620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-06 14:00:27.984  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.27] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2023-01-06 14:00:27.986  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.27] using APR version [1.7.0].
+2023-01-06 14:00:27.988  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-01-06 14:00:27.990  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-01-06 14:00:27.991  INFO 13620 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2023-01-06 14:00:27.993  INFO 13620 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-06 14:00:27.994  INFO 13620 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-06 14:00:28.325  INFO 13620 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-01-06 14:00:28.339  INFO 13620 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-06 14:00:28.342  INFO 13620 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2929 ms
+2023-01-06 14:00:28.366  INFO 13620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-01-06 14:00:28.393  INFO 13620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-01-06 14:00:28.395  INFO 13620 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/InhaClub?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul'
+2023-01-06 14:00:28.491  INFO 13620 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-06 14:00:28.542  INFO 13620 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-01-06 14:00:29.043  INFO 13620 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-06 14:00:29.045  INFO 13620 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-06 14:00:29.626  WARN 13620 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-06 14:00:29.651  INFO 13620 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-01-06 14:00:32.835  INFO 13620 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@375caec6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a7390df, org.springframework.security.web.context.SecurityContextPersistenceFilter@3904f2d2, org.springframework.security.web.header.HeaderWriterFilter@2e0eca6d, org.springframework.security.web.authentication.logout.LogoutFilter@62eb7088, Team7.InhaClub.Security.JwtAuthenticationFilter@184e3eb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ebb22df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66becac7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66c9e10b, org.springframework.security.web.session.SessionManagementFilter@d12fa2e, org.springframework.security.web.access.ExceptionTranslationFilter@30c6ffc2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@74d1551e]
+2023-01-06 14:00:33.267  INFO 13620 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-06 14:00:33.308  INFO 13620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-06 14:00:33.329  INFO 13620 --- [restartedMain] Team7.InhaClub.InhaClubApplication       : Started InhaClubApplication in 8.204 seconds (JVM running for 49004.986)
+2023-01-06 14:00:33.345  INFO 13620 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
