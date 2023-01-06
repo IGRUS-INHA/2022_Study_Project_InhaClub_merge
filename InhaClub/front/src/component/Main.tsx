@@ -54,13 +54,13 @@ const Main = ():any => {
     return<>
     <div className="main">
         <Card contentNum={contentNum}></Card>
-        {
+        {/* {
             contentNum == 3 && <div className="btn">
             <button onClick={()=>{
                 setContentNum(clubs.length)
             }}>더보기</button>
         </div>
-        }
+        } */}
     </div>
     </>
 }
