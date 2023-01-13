@@ -4,12 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { addKeyword, setIsSearch, subKeyword } from '../store/store'
 
 
+const keywordList = ['헬스','달리기', '운동동아리', '운동하는남자']
+
 const Header = ():any => {
 
     const navigate = useNavigate()
     // const [keyword, setKeyword]: any = useState([])
     const dispatch = useDispatch()
     const keyword = useSelector((state:any) => state.keyword)
+
+    const [nowKeywordList, setNowKeywordList] = useState(['null'])
 
     return<>
     <header>
@@ -23,7 +27,6 @@ const Header = ():any => {
                 </div>
             </div>
             <div className="header-bottom">
-                
                 <div className="search">
                     {
                         keyword.map((a:any,i:any)=>{
@@ -31,10 +34,6 @@ const Header = ():any => {
                                 {a}
                                 <div className="del" onClick={(e)=>{
                                     e.stopPropagation()
-                                    // let a = [...keyword]
-                                    // a.splice(i,1)
-                                    // setKeyword(a)
-                                    console.log(a)
                                     dispatch(subKeyword(a))
                                 }}>
                                     X
@@ -42,22 +41,29 @@ const Header = ():any => {
                             </div>
                         })
                     }
+
                     <input type="text" onChange={(e)=>{
 
                         let nowKeyword = e.target.value;
+                        console.log(nowKeyword);
+
+                        if(nowKeyword === ""){
+                            setNowKeywordList(['null'])
+                        }else{
+                            console.log(keywordList);
+                            let temp = keywordList.filter(keyword => keyword.startsWith(nowKeyword))
+                            setNowKeywordList(temp)
+                        }
+
                         if(nowKeyword.endsWith(" ")){
+                            nowKeyword = nowKeyword.trim();
+                            console.log(nowKeyword);
                             e.target.value = "";
-                            
-                            if(nowKeyword != " "){
-                                // let a = [...keyword]
-                                // a.push(nowKeyword)
-                                // setKeyword(a))
-                                nowKeyword = nowKeyword.slice(0,-1)
-                                console.log(nowKeyword)
+
+                            if(nowKeyword != " " && nowKeywordList.includes(nowKeyword)){
                                 keyword.includes(nowKeyword) || dispatch(addKeyword(nowKeyword));
                             }
                         }
-
                         }} placeholder="ex) 음악, 운동, 학술"
                         />
                 </div>
@@ -65,6 +71,15 @@ const Header = ():any => {
                 onClick={()=>{
                     dispatch(setIsSearch(true))
                 }}/>
+                {
+                    nowKeywordList[0] === "null" || <div className="recommend-keyword">
+                    {
+                        nowKeywordList.map(keyword => {
+                            return <div>{keyword}</div>
+                        })
+                    }
+                </div>
+                }
             </div>
         </div>
     </header>
