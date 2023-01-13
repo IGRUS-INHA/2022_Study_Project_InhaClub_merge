@@ -4,6 +4,7 @@ import Biryong from "./img/biryong.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { couldStartTrivia } from "typescript";
 function Login()
 {
     const [userID, setID] = useState("");
@@ -58,8 +59,9 @@ function Login()
             dispatch({type:'token', payload:{accessToken:accessToken.access_TOKEN, refreshToken:accessToken.refresh_TOKEN}});
             setTimeout(()=>{refresh()},JWT_EXPIRY_TIME);
             setTimeout(()=>{navigate("/")}, 3000);
-            console.log(accessToken);
-        })
+        }).catch(function (error) {
+            alert(error.message);
+        });
     }
     function refresh()
     {
@@ -74,7 +76,6 @@ function Login()
             axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
             dispatch({type:'token', payload:{accessToken:accessToken.access_TOKEN, refreshToken:accessToken.refresh_TOKEN}});
             setTimeout(()=>{},JWT_EXPIRY_TIME);
-            console.log(accessToken);
         })
     }
 }
