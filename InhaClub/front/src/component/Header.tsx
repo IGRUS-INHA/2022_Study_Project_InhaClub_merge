@@ -1,10 +1,11 @@
+import e from "express";
 import { ReactComponentElement, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { addKeyword, setIsSearch, subKeyword } from '../store/store'
 
 
-const keywordList = ['헬스','달리기', '운동동아리', '운동하는남자']
+const keywordList = ['운동','달리기', '운동동아리', '운동하는남자', '요리조리피하기', '헬스']
 
 const Header = ():any => {
 
@@ -42,7 +43,7 @@ const Header = ():any => {
                         })
                     }
 
-                    <input type="text" onChange={(e)=>{
+                    <input type="text" className="keyword-input" onChange={(e)=>{
 
                         let nowKeyword = e.target.value;
                         console.log(nowKeyword);
@@ -50,8 +51,10 @@ const Header = ():any => {
                         if(nowKeyword === ""){
                             setNowKeywordList(['null'])
                         }else{
-                            console.log(keywordList);
-                            let temp = keywordList.filter(keyword => keyword.startsWith(nowKeyword))
+                            console.log("nowKeyword: "+ nowKeyword);
+                            console.log("keyword: "+ keyword);
+                            
+                            let temp = keywordList.filter(key => key.startsWith(nowKeyword) && !keyword.includes(key))
                             setNowKeywordList(temp)
                         }
 
