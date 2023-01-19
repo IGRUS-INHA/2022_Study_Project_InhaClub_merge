@@ -20,7 +20,6 @@ let isSearch : any = createSlice({
   initialState: false,
   reducers: {
     setIsSearch(state, actions){
-      console.log(1)
       return actions.payload
     }
   }
