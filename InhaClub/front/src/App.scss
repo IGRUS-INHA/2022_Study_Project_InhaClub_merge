@@ -61,6 +61,10 @@ header {
             text-decoration-line: none;
             width: 20%;
             height: 30%;
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 
