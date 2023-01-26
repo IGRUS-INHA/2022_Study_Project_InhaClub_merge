@@ -1,8 +1,9 @@
+import axios from "axios";
 import { ReactComponentElement, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsSearch } from "../store/store";
 
-const clubs = [
+const clubsExample = [
     {
         id: 0,
         name: "헬스동아리",
@@ -49,11 +50,19 @@ const clubs = [
 
 const Main = ():any => {
 
-    const [contentNum,setContentNum] = useState(3);
+    const [clubs,setClubs] = useState(clubsExample);
+
+    axios.get('/api/clubList')
+    .then((d)=>{
+        setClubs(d.data)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
 
     return<>
     <div className="main">
-        <Card contentNum={contentNum}></Card>
+        <Card clubs={clubs}></Card>
         {/* {
             contentNum == 3 && <div className="btn">
             <button onClick={()=>{
@@ -65,7 +74,7 @@ const Main = ():any => {
     </>
 }
 
-const Card = (props:any):any => {
+const Card = ({clubs}:any):any => {
 
     const dispatch = useDispatch()
     const isSearch = useSelector((state:any)=>state.isSearch)
@@ -82,7 +91,7 @@ const Card = (props:any):any => {
         console.log(keyword)
 
         for (let i = 0; i < keyword.length; i++) {
-            _content.push(...clubs.filter(x=> x.tags.includes(keyword[i])))
+            _content.push(...clubs.filter((x:any) => x.tags.includes(keyword[i])))
         }
     
         setContent(_content)

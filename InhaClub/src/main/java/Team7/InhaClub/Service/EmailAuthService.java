@@ -33,7 +33,7 @@ public class EmailAuthService {
         MimeMessage message = emailSender.createMimeMessage();
 
         message.addRecipients(MimeMessage.RecipientType.TO, to); //보내는 대상
-        message.setFrom("vkwjs336@naver.com"); // 서버 메일 id
+        message.setFrom("inhaclub@gmail.com"); // 서버 메일 id
         message.setSubject("회원가입 이메일 인증"); // 제목
 
         String msg="";
@@ -58,7 +58,8 @@ public class EmailAuthService {
     /** 이메일 인증키 생성 */
     public static String createKey() {
         StringBuffer key = new StringBuffer();
-        Random r = new Random();
+        long seed = System.currentTimeMillis();
+        Random r = new Random(seed);
 
         for (int i = 0; i < 10; i++) {
             int n = r.nextInt() % 3;

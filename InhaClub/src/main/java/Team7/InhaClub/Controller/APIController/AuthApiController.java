@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
+import java.util.Random;
 
 @RequiredArgsConstructor
 @RestController
@@ -26,7 +27,8 @@ import java.net.URI;
 public class AuthApiController {
     private final EmailAuthService emailAuthService;
     private final AuthService authService;
-    private String emailAuthCode = "a";
+    long seed = System.currentTimeMillis();
+    private String emailAuthCode = new Random(seed).toString();
 
     /** 회원가입 */
     @PostMapping(value = "/auth")

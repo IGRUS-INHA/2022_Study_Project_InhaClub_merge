@@ -31,7 +31,7 @@ header {
         margin: auto;
         position: relative;
         float: left;
-        width: 20%;
+        width: 15%;
         height: 90%;
         background-size: contain;
         background-repeat: no-repeat;
@@ -54,11 +54,17 @@ header {
         }
 
         .nav {
+            position: relative;
+            bottom: 0;
+            left: 60px;
             font-weight: 700;
             text-decoration-line: none;
-            text-align: end;
             width: 20%;
             height: 30%;
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 
@@ -67,7 +73,8 @@ header {
         border: 2.5px solid $main-color;
         display: flex;
         overflow-y: auto;
-        align-items: center;
+        overflow: visible;
+        align-items: center; 
         float: left;
         border-radius: 10px;
         width: 80%;
@@ -111,8 +118,24 @@ header {
                 border-radius: 8px;
                 font-size: 18px;
             }
-
         }
+
+    }
+}
+
+.recommend-keyword{
+    z-index: 1;
+    background-color: white;
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    position: absolute;
+    top: 70px;
+    
+    >div{
+        border-bottom: 1px solid;
+        padding: 10px;
     }
 }
 
