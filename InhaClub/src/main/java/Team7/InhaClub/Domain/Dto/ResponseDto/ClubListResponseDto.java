@@ -9,11 +9,9 @@ import java.util.List;
 public class ClubListResponseDto {
 
     private final List<Club> clubList;
-    private final List<String> clubTagList;
 
-    public ClubListResponseDto(List<Club> _clubList, List<String> _clubTagList) {
+    public ClubListResponseDto(List<Club> _clubList) {
         this.clubList = _clubList;
-        this.clubTagList = _clubTagList;
     }
 
 }

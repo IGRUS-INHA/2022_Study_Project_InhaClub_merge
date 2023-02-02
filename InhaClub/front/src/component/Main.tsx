@@ -1,78 +1,66 @@
+import userEvent from "@testing-library/user-event";
 import axios from "axios";
-import { ReactComponentElement, useState } from "react";
+import { ReactComponentElement, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { List } from "reselect/es/types";
 import { setIsSearch } from "../store/store";
 
-const clubsExample = [
-    {
-        id: 0,
-        name: "헬스동아리",
-        backgroundImage: "image.png",
-        tags: ['운동']
-    },
-    {
-        id: 1,
-        name: "노래동아리",
-        backgroundImage: "image.png",
-        tags: ['음악']
-    },
-    {
-        id: 2,
-        name: "짱큰동아리",
-        backgroundImage: "image.png",
-        tags: ['중앙', '대형']
-    },
-    {
-        id: 3,
-        name: "봉사동아리",
-        backgroundImage: "image.png",
-        tags: ['봉사', '대형']
-    },
-    {
-        id: 4,
-        name: "축구동아리",
-        backgroundImage: "image.png",
-        tags: ['운동', '대형']
-    },
-    {
-        id: 5,
-        name: "기독교동아리",
-        backgroundImage: "image.png",
-        tags: ['종교', '대형']
-    },
-    {
-        id: 6,
-        name: "와인동아리",
-        backgroundImage: "image.png",
-        tags: ['신규', '술']
-    },
-]
 
 const Main = ():any => {
 
-    const [clubs,setClubs] = useState(clubsExample);
+    const [contentNum, setContentNum] = useState();
+    const [clubs, setClubs] = useState([]);
 
-    axios.get('/api/clubList')
-    .then((d)=>{
-        setClubs(d.data)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
+    try {
+        useEffect(()=>{
+            axios.post("/api/clubList").then(response => {
+                setClubs(response.data);
+                console.log(response.data);
+            });
+        },[]);
+    } catch (exception) {
+        alert("Error!");
+    }
 
-    return<>
+    return(
+        <>
+            <div>
+                <Lists clubs={clubs}/>
+            </div>
+        </>
+    );
+    /*
+   return(
     <div className="main">
-        <Card clubs={clubs}></Card>
-        {/* {
+        <Card></Card>
+        {
             contentNum == 3 && <div className="btn">
             <button onClick={()=>{
-                setContentNum(clubs.length)
+                setContentNum(list.length);
             }}>더보기</button>
         </div>
-        } */}
+        }
     </div>
-    </>
+   );*/
 }
+
+
+const Lists = ({clubs} : any) => {
+    return (
+        <>
+            <div>
+                {clubs.clubList && clubs.clubList.map((club:any) => {
+                    return (
+                        <div id={club.id}>
+                            {club.clubName}
+                        </div>
+                    )
+                })}
+            </div>
+        </>
+    );
+};
+
 
 const Card = ({clubs}:any):any => {
 
