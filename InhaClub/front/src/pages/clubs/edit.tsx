@@ -93,6 +93,7 @@ function Edit() {
         // }
     }
 
+    // 테스트용
     function checkData()
     {
         alert("메인 이미지 URL : " + mainCloudURL + "\n 콘텐츠 이미지 URL : " + contentCloudURL)
