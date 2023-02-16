@@ -1,4 +1,5 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import DefaultImage from "../../img/default_image.png";
 import Editor from './editor';
@@ -22,6 +23,21 @@ function Edit() {
     const [mainCloudURL, setMCloudURL] = useState("");  // 메인 이미지 URL
     const [contentCloudURL, setCCloudURL] = useState("");  // 콘텐츠 이미지 URL
 
+    const { clubId } = useParams();
+
+    const [clubData, setClubData] = useState();
+
+    useEffect(() => {
+        axios.post('/api/club/' + clubId)
+        .then((response) => {
+            setClubData(response.data);
+        })
+        .catch(function(error) {
+            console.log("Error!");
+        })
+    }, []);
+
+    console.log(clubData);
 
     // editor 컴포넌트에서 HTML 코드 가져오기
     const editorFunc = (content:any) => {

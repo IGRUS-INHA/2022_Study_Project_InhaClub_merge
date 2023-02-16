@@ -23,21 +23,23 @@ export type todoType = {
 function Clubs() {
 
     // URL 파라미터 받기 ( ClubID 구분 )
-    // let params = useParams();
-    // console.log(params);
+    const { clubId } = useParams();
 
-    // const [Data, setData] = useState<todoType[]>([]);
+    //const [Data, setData] = useState<todoType[]>([]);
+    const [clubData, setClubData] = useState();
 
-    // useEffect(() => {
-    // axios.get(`/dummy/ClubInfo.json`)
-    //     .then((response) => {
-    //         setData(response.data);
-    //         console.log("성공");
-    //     })
-    //     .catch(function(error) {
-    //             console.log("실패");
-    //     })
-    // }, [] )
+    useEffect(() => {
+        axios.post('/api/club/' + clubId)
+        .then((response) => {
+            setClubData(response.data);
+            alert(response.data);
+        })
+        .catch(function(error) {
+            console.log("Error!");
+        })
+    }, []);
+
+    console.log(clubData);
 
     return (
         <div id="wrap">
@@ -59,7 +61,7 @@ function Clubs() {
                         <div>
                             <ul>
                                 <li>
-                                    <div className="tit02">동아리 설명</div>
+                                    <div className="tit02"></div>
                                     <div className="txt">환영합니다.</div>
                                 </li>
                                 <li>

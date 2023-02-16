@@ -9,6 +9,7 @@ import Search from '../src/component/Search';
 import Clubs from '../src/pages/clubs/clubs';
 import Register from '../src/pages/clubs/register';
 import Edit from '../src/pages/clubs/edit';
+import ErrorPage from "../src/ErrorPage";
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
           <Route path="/" element={<Search/>} />
           <Route path="/join" element={<Join/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/clubs" element={<Clubs/>} />
+          <Route path="/clubs/:clubId" element={<Clubs/>} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/edit" element={<Edit/>} />
+          <Route path="/edit/:clubId" element={<Edit/>} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
       </BrowserRouter>
     </div>

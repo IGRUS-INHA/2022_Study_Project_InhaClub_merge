@@ -90,20 +90,20 @@ function Register() {
             imageUploader(mainFile).then((geturl) => setMCloudURL(geturl));
             imageUploader(contentFile).then((geturl) => setCCloudURL(geturl));
 
-            alert("동아리 등록 완료");
+            //alert("동아리 등록 완료");
 
-            // axios.post("/api/club/clubRegister",
-            //     {
-            //         clubName: clubName,
-            //         description: clubDescription
-            //     }).then(function (response) {
-            //         if (response.data) {
-            //             imageUploader(mainFile).then((geturl) => setMCloudURL(geturl));
-            //             imageUploader(contentFile).then((geturl) => setCCloudURL(geturl));
-            //             alert("동아리 등록 완료");
-            //         }
-            //         else alert("동아리 등록 실패");
-            //     })
+            axios.post("/api/club/clubRegister",
+                {
+                    clubName: clubName,
+                    description: clubDescription
+                }).then(function (response) {
+                    if (response.data) {
+                        imageUploader(mainFile).then((geturl) => setMCloudURL(geturl));
+                        imageUploader(contentFile).then((geturl) => setCCloudURL(geturl));
+                        alert("동아리 등록 완료");
+                    }
+                    else alert("동아리 등록 실패");
+                })
         }
     }
 

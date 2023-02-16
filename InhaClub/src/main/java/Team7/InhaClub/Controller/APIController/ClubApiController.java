@@ -9,6 +9,7 @@ import Team7.InhaClub.Service.ClubService;
 import Team7.InhaClub.Service.CommentsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.constraints.ModCheck;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -100,13 +101,16 @@ public class ClubApiController {
 
     /** 클럽 상세정보 전송 */
     @PostMapping(value = "/club/{id}")
-    public InfoResponseDto clubPage(@PathVariable("id") @ModelAttribute("id") Long _id, Model model) {
+    public ClubResponseDto clubPage(@PathVariable("id") @ModelAttribute("id") Long _id) {
         Club club = clubService.findByClubId(_id).orElseThrow(() -> new IllegalArgumentException("not found."));
-        ClubResponseDto response = new ClubResponseDto(club);
-        PostResponseDto dto = new PostResponseDto(club.getPosts());
-        List<CommentsResponseDto> comments = dto.getComments();
+        return new ClubResponseDto(club);
+    }
 
-        return new InfoResponseDto(response, dto, comments);
+    /** 동아리 게시판 정보 전송 */
+    @PostMapping(value = "/club/post/{id}")
+    public PostResponseDto clubPost(@PathVariable("id") @ModelAttribute("id") Long _id) {
+        Club club = clubService.findByClubId(_id).orElseThrow(() -> new IllegalArgumentException("Club Not Found"));
+        return new PostResponseDto(club.getPosts());
     }
 
     /** 클럽 리스트 전송 */
@@ -114,4 +118,5 @@ public class ClubApiController {
     public ClubListResponseDto clubList() {
         return new ClubListResponseDto(clubService.findClubs(), clubService.findClubTagLists());
     }
+
 }
