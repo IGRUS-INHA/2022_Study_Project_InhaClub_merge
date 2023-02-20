@@ -94,8 +94,23 @@ function Register() {
 
             axios.post("/api/club/clubRegister",
                 {
+                    // 이 밑의 4개만 있어도 spring과 정상적인 통신 가능
                     clubName: clubName,
-                    description: clubDescription
+                    description: clubDescription,
+                    representative: headName,
+                    inRecruit: clubRecruit,
+
+                    // 이 밑은 비어도 됨 (spring에 또다른 데이터 추가 필요시 추가 가능)
+                    // interest: clubTag // 동아리 관심사 
+                    // sns:  // 동아리 sns
+                    // room:  // 동아리방
+                    // recruitTarget:  // 모집 대상
+                    // recruitStart: startDate // 시작 날짜
+                    // recruitEnd: dueDate // 종료 날짜
+                    // applicationConditions:  // 동아리 지원 조건
+                    // tags: clubTag // 검색 태그
+                    // numOfMem: clubCount // 동아리 인원 수
+
                 }).then(function (response) {
                     if (response.data) {
                         imageUploader(mainFile).then((geturl) => setMCloudURL(geturl));
@@ -144,8 +159,8 @@ function Register() {
                 <li>
                     <div className="tit02">모집 여부</div>
                     <select className="box_1" onChange={(e)=>{e.target.value === "yes" ? setCRec(e.target.value) : setCRec(e.target.value)}}>
-                            <option value="yes">모집 중</option>
-                            <option value="no">모집 마감</option>
+                            <option value="true">모집 중</option>
+                            <option value="false">모집 마감</option>
                     </select>
                 </li>
                 <li>

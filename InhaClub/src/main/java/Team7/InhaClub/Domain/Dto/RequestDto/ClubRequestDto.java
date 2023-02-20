@@ -1,6 +1,5 @@
 package Team7.InhaClub.Domain.Dto.RequestDto;
 
-import Team7.InhaClub.Domain.Dto.ResponseDto.ClubResponseDto;
 import Team7.InhaClub.Domain.Entity.Club;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -52,6 +51,9 @@ public class ClubRequestDto {
     /** 동아리 검색 태그 */
     private String tags;
 
+    /** 동아리 인원 수 */
+    private Long numOfMem;
+
     public Club toEntity() {
         return Club.builder()
                 .clubName(clubName)
@@ -66,6 +68,7 @@ public class ClubRequestDto {
                 .sns(sns)
                 .description(description)
                 .tags(tags)
+                .numOfMem(numOfMem)
                 .build();
     }
 }

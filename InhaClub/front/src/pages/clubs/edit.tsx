@@ -107,6 +107,37 @@ function Edit() {
         //     alert("동아리 등록 완료");
 
         // }
+        
+        
+        // 동아리 정보 수정은 백엔드 단독으로 기동할 때 최적화되어있어 기능을 수정할 예정
+        axios.post("/club/clubEdit",
+        {
+            // 이 밑의 4개만 있어도 spring과 정상적인 통신 가능
+            clubName: clubName,
+            description: clubDescription,
+            representative: headName,
+            inRecruit: clubRecruit,
+
+            // 이 밑은 비어도 됨 (spring에 또다른 데이터 추가 필요시 추가 가능)
+            // interest: clubTag // 동아리 관심사 
+            // sns:  // 동아리 sns
+            // room:  // 동아리방
+            // recruitTarget:  // 모집 대상
+            // recruitStart: startDate // 시작 날짜
+            // recruitEnd: dueDate // 종료 날짜
+            // applicationConditions:  // 동아리 지원 조건
+            // tags: clubTag // 검색 태그
+            // numOfMem: clubCount // 동아리 인원 수
+
+        }).then(function (response) {
+            if (response.data) {
+                imageUploader(mainFile).then((geturl) => setMCloudURL(geturl));
+                imageUploader(contentFile).then((geturl) => setCCloudURL(geturl));
+                alert("동아리 등록 완료");
+            }
+            else alert("동아리 등록 실패");
+        })
+
     }
 
     // 테스트용

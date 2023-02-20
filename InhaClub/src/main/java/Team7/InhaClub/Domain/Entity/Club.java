@@ -3,7 +3,6 @@ package Team7.InhaClub.Domain.Entity;
 import Team7.InhaClub.Domain.Dto.RequestDto.ClubRequestDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.h2.util.json.JSONObject;
 
 import javax.persistence.*;
 
@@ -34,7 +33,7 @@ public class Club {
     private boolean inRecruit;
 
     /** 관심사 */
-    @Column(nullable = false)
+    @Column
     private String interest;
 
     /** 동아리 방 */
@@ -74,6 +73,10 @@ public class Club {
     @Column
     private String tags;
 
+    /** 동아리 인원 수 */
+    @Column
+    private Long numOfMem;
+
     public void setPosts(Posts _posts) {
         this.posts = _posts;
     }
@@ -96,5 +99,6 @@ public class Club {
         this.applicationConditions = _request.getApplicationConditions();
         this.description = _request.getDescription();
         this.tags = _request.getTags();
+        this.numOfMem = _request.getNumOfMem();
     }
 }
